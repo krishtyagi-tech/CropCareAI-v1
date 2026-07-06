@@ -1,18 +1,21 @@
 import firebase_admin
 from firebase_admin import credentials
-from firebase_admin import auth
-
 import os
 
-# Initialize Firebase only once
 if not firebase_admin._apps:
 
-    cred = credentials.Certificate(
-        os.path.join(
-            "secrets",
-            "firebase-admin.json"
+    firebase_path = os.getenv("FIREBASE_ADMIN_JSON")
+
+    if firebase_path:
+        cred = credentials.Certificate(firebase_path)
+    else:
+        cred = credentials.Certificate(
+            os.path.join(
+                "secrets",
+                "firebase-admin.json"
+            )
         )
-    )
 
     firebase_admin.initialize_app(cred)
+
 print("Firebase Admin Initialized ✅")
