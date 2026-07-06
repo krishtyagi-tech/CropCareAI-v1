@@ -189,16 +189,31 @@ section[data-testid="stSidebar"] .stDateInput{
 
 create_tables()
 try:
-    session = requests.get(
-        "https://cropcareai-v1.onrender.com/session"
-    ).json()
+    response = requests.get(
+        "https://cropcareai-v1.onrender.com/session",
+        timeout=30
+    )
+
+    if response.status_code != 200:
+        st.error(f"Backend returned {response.status_code}")
+        st.stop()
+
+    session = response.json()
 
     if "uid" not in session:
         st.switch_page("pages/login.py")
         st.stop()
 
-except Exception:
+except requests.exceptions.Timeout:
+    st.error("Backend is waking up. Please wait 30-60 seconds and refresh.")
+    st.stop()
+
+except requests.exceptions.ConnectionError:
     st.error("Cannot connect to backend.")
+    st.stop()
+
+except Exception as e:
+    st.error(f"Unexpected error: {e}")
     st.stop()
 # try:
 
