@@ -20,24 +20,27 @@ export async function loginWithGoogle() {
     // Verify Token with FastAPI
     // --------------------------------------------------
 
-    const response = await fetch("http://127.0.0.1:8000/verify-token", {
-      method: "POST",
+    const response = await fetch(
+      "https://cropcareai-v1.onrender.com/verify-token",
+      {
+        method: "POST",
 
-      headers: {
-        "Content-Type": "application/json",
+        headers: {
+          "Content-Type": "application/json",
+        },
+
+        body: JSON.stringify({
+          token: token,
+        }),
       },
-
-      body: JSON.stringify({
-        token: token,
-      }),
-    });
+    );
 
     const verified = await response.json();
 
     if (!verified.success) {
       throw new Error("Token Verification Failed");
     }
-    // await fetch("http://127.0.0.1:8000/session", {
+    // await fetch("https://cropcareai-v1.onrender.com/session", {
     //   method: "POST",
     //   headers: {
     //     "Content-Type": "application/json",

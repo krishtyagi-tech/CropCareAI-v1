@@ -192,7 +192,7 @@ create_tables()
 # try:
 
 #     session = requests.get(
-#         "http://127.0.0.1:8000/session"
+#         "https://cropcareai-v1.onrender.com/session"
 #     ).json()
 
 #     if "uid" not in session:
@@ -217,7 +217,7 @@ with st.sidebar:
     try:
 
         session = requests.get(
-            "http://127.0.0.1:8000/session"
+            "https://cropcareai-v1.onrender.com/session"
         ).json()
 
         if "name" in session:
@@ -292,7 +292,7 @@ with st.sidebar:
             try:
 
                 response = requests.post(
-                    "http://127.0.0.1:8000/crops/",
+                    "https://cropcareai-v1.onrender.com/crops/",
                     json={
                         "crop_name": crop_name,
                         "plant_id": plant_id,
@@ -333,7 +333,7 @@ Every future scan will automatically be linked to that plant.
 st.subheader("🌾 Select Crop")
 
 response = requests.get(
-    "http://127.0.0.1:8000/crops/"
+    "https://cropcareai-v1.onrender.com/crops/"
 )
 
 result = response.json()
@@ -378,7 +378,7 @@ st.subheader("📊 Dashboard Overview")
 # =====================================================
 
 response = requests.get(
-    "http://127.0.0.1:8000/dashboard/"
+    "https://cropcareai-v1.onrender.com/dashboard/"
 )
 
 result = response.json()
@@ -436,7 +436,7 @@ st.divider()
 
 # Health Distribution
 response = requests.get(
-    "http://127.0.0.1:8000/charts/health"
+    "https://cropcareai-v1.onrender.com/charts/health"
 )
 
 result = response.json()
@@ -449,7 +449,7 @@ else:
 
 # Crop Distribution
 response = requests.get(
-    "http://127.0.0.1:8000/charts/crop"
+    "https://cropcareai-v1.onrender.com/charts/crop"
 )
 
 result = response.json()
@@ -589,7 +589,7 @@ st.divider()
 st.subheader("⚠ Current Alerts")
 
 response = requests.get(
-    "http://127.0.0.1:8000/alerts/"
+    "https://cropcareai-v1.onrender.com/alerts/"
 )
 
 result = response.json()
@@ -668,7 +668,7 @@ st.divider()
 st.subheader("🕒 Recent Activity")
 
 response = requests.get(
-    "http://127.0.0.1:8000/activity/"
+    "https://cropcareai-v1.onrender.com/activity/"
 )
 
 result = response.json()

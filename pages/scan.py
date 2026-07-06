@@ -12,6 +12,7 @@ from streamlit_geolocation import streamlit_geolocation
 from utils.database import save_scan
 from datetime import datetime
 import requests
+
 # ==========================
 # PAGE SETTINGS
 # ==========================
@@ -363,7 +364,7 @@ if uploaded_file is not None:
 
             # <-- OUTSIDE the else block
             api_response = requests.post(
-                "http://127.0.0.1:8000/scan/",
+                "https://cropcareai-v1.onrender.com/scan/",
                 json={
                     "crop_id": crop_id,
                     "image_path": image_path,

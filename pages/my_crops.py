@@ -90,7 +90,7 @@ if selected_history:
 # =====================================================
 
 response = requests.get(
-    "http://127.0.0.1:8000/history/"
+    "https://cropcareai-v1.onrender.com/history/"
 )
 
 result = response.json()
@@ -261,7 +261,7 @@ else:
                     ):
 
                         response = requests.delete(
-                            f"http://127.0.0.1:8000/crop/{crop_id}"
+                            f"https://cropcareai-v1.onrender.com/crop/{crop_id}"
                         )
 
                         result = response.json()
@@ -459,7 +459,7 @@ else:
                             ):
 
                                 response = requests.delete(
-                                    f"http://127.0.0.1:8000/scan/{scan_id}"
+                                    f"https://cropcareai-v1.onrender.com/scan/{scan_id}"
                                 )
 
                                 result = response.json()
