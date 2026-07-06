@@ -188,7 +188,18 @@ section[data-testid="stSidebar"] .stDateInput{
 """, unsafe_allow_html=True)
 
 create_tables()
+try:
+    session = requests.get(
+        "https://cropcareai-v1.onrender.com/session"
+    ).json()
 
+    if "uid" not in session:
+        st.switch_page("pages/login.py")
+        st.stop()
+
+except Exception:
+    st.error("Cannot connect to backend.")
+    st.stop()
 # try:
 
 #     session = requests.get(
