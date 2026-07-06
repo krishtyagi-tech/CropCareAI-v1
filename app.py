@@ -200,9 +200,9 @@ try:
 
     session = response.json()
 
-    if "uid" not in session:
-        st.switch_page("pages/login.py")
-        st.stop()
+    # if "uid" not in session:
+    #     st.switch_page("pages/login.py")
+    #     st.stop()
 
 except requests.exceptions.Timeout:
     st.error("Backend is waking up. Please wait 30-60 seconds and refresh.")
@@ -215,6 +215,7 @@ except requests.exceptions.ConnectionError:
 except Exception as e:
     st.error(f"Unexpected error: {e}")
     st.stop()
+    
 # try:
 
 #     session = requests.get(
