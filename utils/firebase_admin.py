@@ -6,7 +6,7 @@ if not firebase_admin._apps:
 
     firebase_path = os.getenv("FIREBASE_ADMIN_JSON")
 
-    if firebase_path:
+    if firebase_path and os.path.exists(firebase_path):
         cred = credentials.Certificate(firebase_path)
     else:
         cred = credentials.Certificate(
