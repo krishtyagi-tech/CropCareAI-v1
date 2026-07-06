@@ -1,0 +1,16 @@
+fastapi
+uvicorn
+streamlit
+requests
+pandas
+plotly
+firebase-admin
+python-multipart
+Pillow
+opencv-python
+numpy
+scikit-learn
+joblib
+reportlab
+python-dotenv
+google-generativeai

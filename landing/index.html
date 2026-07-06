@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CropCareAI — Sign In</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app" id="app">
+
+  <!-- ===================== LEFT: LAMP SCENE ===================== -->
+  <section class="scene" id="scene">
+    <div class="sun"></div>
+    <div class="mountains mountains--back"></div>
+    <div class="mountains mountains--front"></div>
+
+    <div class="stars">
+      <span></span><span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <span class="firefly"></span>
+    <span class="firefly"></span>
+    <span class="firefly"></span>
+    <span class="firefly"></span>
+
+    <!-- decorative foliage -->
+    <svg class="foliage foliage--tl" viewBox="0 0 220 180" fill="none">
+      <path d="M0,0 C60,10 90,40 70,90 C110,70 150,90 140,140 C170,120 210,140 200,180 L0,180 Z" fill="#0e2a17" opacity="0.85"/>
+      <path d="M10,10 C60,30 70,70 40,100" stroke="#3f7d4e" stroke-width="2" fill="none" opacity=".6"/>
+    </svg>
+    <svg class="foliage foliage--bl" viewBox="0 0 160 120" fill="none">
+      <path d="M0,120 C40,110 70,80 60,40 C90,60 120,40 110,0 L0,0 Z" fill="#0e2a17"/>
+    </svg>
+
+    <div class="table-surface"></div>
+
+    <!-- headline copy -->
+    <div class="scene-content">
+      <p class="eyebrow">Welcome to</p>
+      <h1 class="brand-heading">CropCare<span class="accent">AI</span></h1>
+      <span class="heading-rule"></span>
+      <p class="tagline">AI Powered Crop Monitoring<br>&amp; Disease Detection System</p>
+    </div>
+
+    <p class="handwritten">Healthy Crops,<br>Smarter Farming.<span class="rule"></span></p>
+
+    <!-- hint -->
+    <div class="lamp-hint" id="lampHint">
+      <span class="hint-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3l14 8-6 2-2 6-6-16Z"/></svg>
+      </span>
+      <span class="hint-text">Click the lamp<br>to open</span>
+    </div>
+
+    <svg class="hint-arrow" viewBox="0 0 80 100" fill="none">
+      <path class="line" d="M12,96 C10,60 38,52 54,16"/>
+      <path class="head" d="M45,22 L54,16 L51,27"/>
+    </svg>
+
+    <!-- lamp button -->
+    <button class="lamp-wrap" id="lampBtn" type="button" aria-pressed="false" aria-label="Turn on the lamp and open the login panel">
+      <span class="lamp-glow"></span>
+      <svg class="lamp-svg" id="lampSvg" viewBox="0 0 160 260" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="flameGrad" x1="0" y1="1" x2="0" y2="0">
+            <stop offset="0%" stop-color="#ff7a00"/>
+            <stop offset="55%" stop-color="#ffb238"/>
+            <stop offset="100%" stop-color="#fff6c8"/>
+          </linearGradient>
+          <linearGradient id="glassGradOn" x1="0" y1="1" x2="0" y2="0">
+            <stop offset="0%" stop-color="#ff8c1a" stop-opacity="0.55"/>
+            <stop offset="100%" stop-color="#ffe29a" stop-opacity="0.12"/>
+          </linearGradient>
+        </defs>
+
+        <!-- handle -->
+        <path d="M55,30 Q80,-8 105,30" fill="none" stroke="#161616" stroke-width="6" stroke-linecap="round"/>
+        <circle cx="80" cy="16" r="5" fill="#161616"/>
+
+        <!-- top cap -->
+        <path d="M62,30 L98,30 L104,46 L56,46 Z" fill="#161616"/>
+
+        <!-- vine leaves -->
+        <g fill="#5fd977" opacity="0.9">
+          <ellipse cx="34" cy="88" rx="14" ry="7" transform="rotate(-35 34 88)"/>
+          <ellipse cx="27" cy="114" rx="12" ry="6" transform="rotate(-15 27 114)"/>
+        </g>
+        <path d="M40,78 Q18,100 25,132" stroke="#4bbf63" stroke-width="2" fill="none" opacity="0.9"/>
+
+        <!-- cage -->
+        <rect x="44" y="46" width="72" height="122" rx="16" fill="none" stroke="#161616" stroke-width="6"/>
+        <line x1="62" y1="46" x2="62" y2="168" stroke="#161616" stroke-width="3"/>
+        <line x1="98" y1="46" x2="98" y2="168" stroke="#161616" stroke-width="3"/>
+
+        <!-- glass -->
+        <rect x="51" y="53" width="58" height="108" rx="10" fill="#12181f" opacity="0.85"/>
+        <rect class="glass-glow" x="51" y="53" width="58" height="108" rx="10" fill="url(#glassGradOn)"/>
+
+        <!-- flame -->
+        <ellipse class="flame-core" cx="80" cy="132" rx="5" ry="12" fill="#fff2b0"/>
+        <path class="flame" d="M80,152 C64,140 66,112 80,90 C94,112 96,140 80,152 Z"/>
+
+        <!-- base -->
+        <path d="M38,168 L122,168 L114,190 L46,190 Z" fill="#141414"/>
+        <rect x="52" y="190" width="56" height="10" rx="3" fill="#101010"/>
+      </svg>
+      <span class="spark spark--1"></span>
+      <span class="spark spark--2"></span>
+    </button>
+  </section>
+
+  <!-- ===================== TOGGLE HANDLE ===================== -->
+  <button class="toggle-chevron" id="toggleChevron" type="button" aria-label="Toggle login panel">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="9 6 15 12 9 18"/>
+    </svg>
+  </button>
+
+  <!-- ===================== RIGHT: LOGIN PANEL ===================== -->
+  <aside class="login-panel" id="loginPanel" aria-hidden="true">
+    <button class="mobile-close" id="mobileClose" type="button" aria-label="Close login panel">✕</button>
+
+    <div class="login-inner">
+      <div class="badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2 4 5v6c0 5 3.4 9 8 11 4.6-2 8-6 8-11V5z"/>
+        </svg>
+        <span>AI &middot; Smart &middot; Secure</span>
+      </div>
+
+      <div class="brand-block">
+        <svg class="leaf-logo" viewBox="0 0 48 48" fill="none">
+          <path d="M24 4C10 8 6 22 10 34c4 10 16 12 24 6 10-8 10-24 2-34-4 4-8 6-12-2z" fill="#5fd977"/>
+          <path d="M24 44C16 34 14 20 24 8" stroke="#0e2417" stroke-width="2" stroke-linecap="round" fill="none"/>
+        </svg>
+        <h2>CropCare<span class="accent">AI</span></h2>
+        <p class="brand-sub">AI Powered Crop Monitoring System</p>
+      </div>
+
+      <div class="welcome-block">
+        <h3>Welcome Back! <span aria-hidden="true">🌱</span></h3>
+        <p>Sign in to continue to your dashboard</p>
+      </div>
+
+      <button class="google-btn" id="googleBtn" type="button">
+        <svg viewBox="0 0 48 48">
+          <path fill="#FFC107" d="M43.6 20.5h-1.9V20H24v8h11.3c-1.6 4.6-6 8-11.3 8-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.6 6.1 29.6 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.7-.4-3.5z"/>
+          <path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.6 16 18.9 13 24 13c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.6 6.1 29.6 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/>
+          <path fill="#4CAF50" d="M24 44c5.5 0 10.4-1.9 14.3-5.1l-6.6-5.4C29.7 35.4 27 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.6 5.1C9.6 39.6 16.2 44 24 44z"/>
+          <path fill="#1976D2" d="M43.6 20.5H24v8h11.3c-.8 2.3-2.3 4.3-4.2 5.6l6.6 5.4C41.9 36.4 44 30.7 44 24c0-1.3-.1-2.7-.4-3.5z"/>
+        </svg>
+        <span>Continue with Google</span>
+      </button>
+
+      <div class="divider"><span>or</span></div>
+
+      <div class="feature-grid">
+        <div class="feature-card">
+          <span class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 3c-5 1-8 6-7 11 1 4 5 7 9 6 5-1 7-6 6-11-1 1-3 2-4-1-1-2-2-4-4-5z"/>
+              <circle cx="12" cy="13" r="1.3" fill="currentColor" stroke="none"/>
+            </svg>
+          </span>
+          <span>Disease Detection</span>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="8" cy="8" r="3"/>
+              <path d="M9 17h7.5a3.5 3.5 0 0 0 .5-6.96A5.5 5.5 0 0 0 6.6 9.6 3 3 0 0 0 7 15.5"/>
+            </svg>
+          </span>
+          <span>Weather Monitoring</span>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="20" x2="5" y2="12"/>
+              <line x1="12" y1="20" x2="12" y2="6"/>
+              <line x1="19" y1="20" x2="19" y2="14"/>
+            </svg>
+          </span>
+          <span>Smart Analytics</span>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 3h7l4 4v14a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/>
+              <line x1="9" y1="12" x2="15" y2="12"/>
+              <line x1="9" y1="16" x2="15" y2="16"/>
+            </svg>
+          </span>
+          <span>AI Reports</span>
+        </div>
+      </div>
+
+      <div class="footer-note">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2 4 5v6c0 5 3.4 9 8 11 4.6-2 8-6 8-11V5z"/>
+        </svg>
+        <span>Your data is safe and secure with us.</span>
+      </div>
+    </div>
+  </aside>
+
+</div>
+
+<script type="module" src="script.js"></script>
+</body>
+</html>

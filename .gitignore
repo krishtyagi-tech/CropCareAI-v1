@@ -1,0 +1,32 @@
+# Virtual Environment
+venv/
+
+# Python Cache
+__pycache__/
+*.pyc
+
+# Environment Variables
+.env
+
+# VS Code
+.vscode/
+
+# Secrets
+secrets/
+
+# Temporary Files
+01_test/
+
+# Generated Reports
+reports/
+
+# Uploaded Images
+uploads/
+
+# Python cache folders
+.pytest_cache/
+.mypy_cache/
+
+# Operating System
+.DS_Store
+Thumbs.db
